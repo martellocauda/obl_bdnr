@@ -1,17 +1,17 @@
 # obl_bdnr
 
 ## Búsqueda de código
-ES en puerto por defecto 9200
-Tener instalado python y pip3
-pip3 install elasticsearch
-pip3 install requests (no lo estamos usando ahora, pero instalar igual)
-pip3 install flask
-para correr: python code_search.py
-levanta en http://localhost:5000/
-La data de elasticsearch, por ahora insertarla manual
+ES en puerto por defecto 9200 <br />
+Tener instalado python y pip3 <br />
+pip3 install elasticsearch <br />
+pip3 install requests (no lo estamos usando ahora, pero instalar igual) <br />
+pip3 install flask <br />
+para correr: python code_search.py <br />
+levanta en http://localhost:5000/ <br />
+La data de elasticsearch, por ahora insertarla manual <br />
 
 ### crear index
-curl -X PUT "localhost:9200/source_code_data?pretty"
+curl -X PUT "localhost:9200/source_code_data?pretty" <br />
 
 ### inserta data
 curl -X POST "localhost:9200/source_code_data/_doc/?pretty" -H 'Content-Type: application/json' -d'
