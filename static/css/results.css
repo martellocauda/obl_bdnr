@@ -1,0 +1,14 @@
+.warpcode {
+    width: auto;
+    background-color: #fff;
+    padding: 8px 12px;
+    border-left: 4px solid #4CAF50;
+    width: 60%;
+}
+
+.title {
+    width: auto;
+    background-color: #adadad;
+    padding: 8px 12px;
+    width: 60%;
+}

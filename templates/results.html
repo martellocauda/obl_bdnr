@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+    </head>
+    <body bgcolor="grey">
+        <center>
+            <h1>GIT Code Search</h1> <br>
+	    <h3>
+	       {% if search_result.hits|length %}
+	           {% for hit in search_result.hits %}
+		       <div class="title">
+                           {{ hit._source.repository }} / {{ hit._source.fileName }}{{hit._source.extension}} 
+		       </div>
+		       <div class="warpcode">
+		           <pre>
+		               <code>
+    		                   {{ hit._source.sourceCode }}
+		    	       </code>
+			    </pre>
+			</div>
+	                <br><br>
+	            {% endfor %}
+	        {% else %}
+		    We can't find any code related to your search. Please, research.
+		{% endif %}
+	    </h3>
+	</center>
+    </body>
+</html>
