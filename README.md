@@ -6,6 +6,7 @@ Tener instalado python y pip3 <br />
 pip3 install elasticsearch <br />
 pip3 install requests (no lo estamos usando ahora, pero instalar igual) <br />
 pip3 install flask <br />
+source code_search/bin/activate <br />
 para correr: python code_search.py <br />
 levanta en http://localhost:5000/ <br />
 La data de elasticsearch, por ahora insertarla manual <br />
