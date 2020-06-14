@@ -3,6 +3,8 @@
 	<head>
 		<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.svg') }}"/>
 		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css"/>
+		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/header.js') }}"></script>
 		<title>GitHub</title>
 	</head>
 	<header>
@@ -12,25 +14,36 @@
 			<img src="{{ url_for('static', filename='img/subheader.PNG') }}" id="votes">
         		<div id="bodycontainer">
         			<div id="buttons">
-					<a href="#" class="links" id="active"><img src="{{ url_for('static', filename='img/search.PNG') }}" id="magni"> Code search</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/code.PNG') }}"> Code</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/issues.PNG') }}"> Issues</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/pull.PNG') }}"> Pull requests</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/action.PNG') }}"> Action</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/project.PNG') }}"> Projects</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/wiki.PNG') }}"> Wiki</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/security.PNG') }}"> Security</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/insight.PNG') }}"> Insights</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/settings.PNG') }}"> Settings</a>
+					<a href="#" id="feed_btn" class="links"><img src="{{ url_for('static', filename='img/feed.PNG') }}" id="img_feed"> Feed</a>
+					<a href="#" id="search_btn" class="links active"><img src="{{ url_for('static', filename='img/search.PNG') }}" id="magni"> Code search</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/code.PNG') }}"> Code</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/issues.PNG') }}"> Issues</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/pull.PNG') }}"> Pull requests</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/action.PNG') }}"> Action</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/project.PNG') }}"> Projects</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/wiki.PNG') }}"> Wiki</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/security.PNG') }}"> Security</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/insight.PNG') }}"> Insights</a>
+					<a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/settings.PNG') }}"> Settings</a>
                 		</div>  
             		</div>
         	</div>
-        	<div id="searchcontainer">
-			<div id="searcher">
+        	<div id="searchcontainer" class="container_active">
+			<div class="functionality_container">
 				<form method="POST" action="http://localhost:5000/search">
 					<input type="text" placeholder="Enter data to search" name="to_search" class="search">
 					<input type="submit" value="Search" class="searchbutton">
 				</form>
 			</div>
         	</div>
+		<div id="feedscontainer" class="container_not_active">
+			<div class="functionality_container">
+				IM FEEEEEEDS
+			</div>
+		</div>
+		<div id="notimplementedcontainer" class="container_not_active">
+                        <div class="functionality_container">
+                                Not implemented yet.
+                        </div>
+                </div>
 </html>

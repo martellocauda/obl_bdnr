@@ -41,20 +41,27 @@ body{
     vertical-align: middle; 
 }
 
+#img_feed {
+    width: 13px;
+    height: 13px;
+    margin-bottom: 3px;
+    margin-right: 2px;
+}
+
 #magni {
     width: 18px;
     height: 18px;
 }
 
 #buttons{
-    width: 950px;
+    width: 1050px;
     margin: auto;
     margin-top: 70px;
     display: flex;
     align-items: center;
 }
 
-#active{
+.active{
     background-color: white;
     border-radius: 3px;
     border-top: 3px #e36209 solid;
@@ -64,12 +71,26 @@ body{
     padding: 15px 8px ;
 }
 
-#searchcontainer{
+.container_active {
     width: 1200px;
     margin: auto;
 }
 
-#searcher{
+.buttonHolder {
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+    margin-bottom: 30px;
+    width: 200px!important;
+}
+
+.container_not_active {
+    display: none;
+}
+
+.functionality_container{
     width: 550px;
     margin: auto;
     margin-top: 100px;

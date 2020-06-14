@@ -107,7 +107,7 @@ pre .line-number span {
 }
 
 pre span {
-    line-height: 20px;
+    /*line-height: 20px;*/
 }
 
 pre .line-number span:hover {
