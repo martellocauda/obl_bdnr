@@ -1,0 +1,103 @@
+body{
+    font-family: "Helvetica", sans-serif;
+    margin: 0;
+}
+
+#menu{
+    width: 100%;
+}
+
+#votos{
+    float: right;
+    margin-right: 275px;
+    width: 600px;
+    height: auto;
+}
+
+#fondo{background-color: #fafbfc;
+       overflow: hidden;
+
+
+}
+#container {
+    width: 100%;
+    border-bottom: 1px solid #e1e4e8;
+    margin-bottom: 30px;
+}
+
+.links{
+    font-size: 14px;
+    color: #586069;
+    text-decoration: none;
+    height: 100%;
+    vertical-align: middle; 
+    margin-left: 15px;
+
+
+
+}
+
+.links img{
+    padding: 0px;
+    width: 22px;
+    height: 22px;
+    height: 100%;
+    vertical-align: middle; 
+}
+#lupa {
+    width: 18px;
+    height: 18px;
+}
+
+#botones{
+    width: 950px;
+    margin: auto;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+}
+
+#activo{
+    background-color: white;
+    border-radius: 3px;
+    border-top: 3px #e36209 solid;
+    border-left: 1px solid #e1e4e8;
+    border-right: 1px solid #e1e4e8;
+    margin-bottom: -1px;
+    padding: 15px 8px ;
+}
+
+#contenedor{
+    width: 1200px;
+    margin: auto;
+}
+#buscador{
+    width: 550px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.buscar{
+    padding: 13px;
+    width: 350px;
+    background-color: rgba(195,195,195,.2);
+    border-radius: 5px;
+    border: 1px solid rgba(195,195,195,.8);
+    margin-right: 4px;
+}
+
+.boton {
+    padding: 13px;
+    width: 120px;
+    color: #0366d6;
+    background-color: white;
+    background-image: none;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+    font-weight:  bold;
+}
+
+.boton:hover {
+    background-color: #0366d6;
+    color: white;
+}
