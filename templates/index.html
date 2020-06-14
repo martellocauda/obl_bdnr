@@ -6,15 +6,14 @@
 		<title>GitHub</title>
 	</head>
 	<header>
-		<img src="{{ url_for('static', filename='img/Captura.PNG') }}" id="menu">
+		<img src="{{ url_for('static', filename='img/header.PNG') }}" id="menu">
 	</header>
-        	<div id="fondo">
-			<img src="{{ url_for('static', filename='img/Captura2.PNG') }}" id="votos">
-        		<div id="container">
-
-        			<div id="botones">
-					<a href="#" class="links" id="activo"><img src="{{ url_for('static', filename='img/lu.png') }}" id="lupa"> Code search</a>
-					<a href="#" class="links"><img src="{{ url_for('static', filename='img/codigo.PNG') }}"> Code</a>
+        	<div id="back">
+			<img src="{{ url_for('static', filename='img/subheader.PNG') }}" id="votes">
+        		<div id="bodycontainer">
+        			<div id="buttons">
+					<a href="#" class="links" id="active"><img src="{{ url_for('static', filename='img/search.PNG') }}" id="magni"> Code search</a>
+					<a href="#" class="links"><img src="{{ url_for('static', filename='img/code.PNG') }}"> Code</a>
 					<a href="#" class="links"><img src="{{ url_for('static', filename='img/issues.PNG') }}"> Issues</a>
 					<a href="#" class="links"><img src="{{ url_for('static', filename='img/pull.PNG') }}"> Pull requests</a>
 					<a href="#" class="links"><img src="{{ url_for('static', filename='img/action.PNG') }}"> Action</a>
@@ -26,11 +25,11 @@
                 		</div>  
             		</div>
         	</div>
-        	<div id="contenedor">
-			<div id="buscador">
+        	<div id="searchcontainer">
+			<div id="searcher">
 				<form method="POST" action="http://localhost:5000/search">
-					<input type="text" placeholder="Enter data to search" name="to_search" class="buscar">
-					<input type="submit" value="Search" class="boton">
+					<input type="text" placeholder="Enter data to search" name="to_search" class="search">
+					<input type="submit" value="Search" class="searchbutton">
 				</form>
 			</div>
         	</div>

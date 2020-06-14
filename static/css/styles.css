@@ -7,19 +7,19 @@ body{
     width: 100%;
 }
 
-#votos{
+#votes{
     float: right;
     margin-right: 275px;
     width: 600px;
     height: auto;
 }
 
-#fondo{background-color: #fafbfc;
+#back{background-color: #fafbfc;
        overflow: hidden;
 
 
 }
-#container {
+#bodycontainer {
     width: 100%;
     border-bottom: 1px solid #e1e4e8;
     margin-bottom: 30px;
@@ -44,12 +44,13 @@ body{
     height: 100%;
     vertical-align: middle; 
 }
-#lupa {
+
+#magni {
     width: 18px;
     height: 18px;
 }
 
-#botones{
+#buttons{
     width: 950px;
     margin: auto;
     margin-top: 70px;
@@ -57,7 +58,7 @@ body{
     align-items: center;
 }
 
-#activo{
+#active{
     background-color: white;
     border-radius: 3px;
     border-top: 3px #e36209 solid;
@@ -67,17 +68,18 @@ body{
     padding: 15px 8px ;
 }
 
-#contenedor{
+#searchcontainer{
     width: 1200px;
     margin: auto;
 }
-#buscador{
+
+#searcher{
     width: 550px;
     margin: auto;
     margin-top: 100px;
 }
 
-.buscar{
+.search{
     padding: 13px;
     width: 350px;
     background-color: rgba(195,195,195,.2);
@@ -86,7 +88,7 @@ body{
     margin-right: 4px;
 }
 
-.boton {
+.searchbutton {
     padding: 13px;
     width: 120px;
     color: #0366d6;
@@ -97,7 +99,7 @@ body{
     font-weight:  bold;
 }
 
-.boton:hover {
+.searchbutton:hover {
     background-color: #0366d6;
     color: white;
 }
