@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
-    </head>
-    <body bgcolor="grey">
-        <center>
-            <h1>GIT Code Search</h1> <br>
-	    <h3>
-	       {% if search_result.hits|length %}
-	           {% for hit in search_result.hits %}
-		       <div class="title">
-                           {{ hit._source.repository }} / {{ hit._source.fileName }}{{hit._source.extension}} 
-		       </div>
-		       <div class="warpcode">
-		           <pre>
-		               <code>
-    		                   {{ hit._source.sourceCode }}
-		    	       </code>
-			    </pre>
-			</div>
-	                <br><br>
-	            {% endfor %}
-	        {% else %}
-		    We can't find any code related to your search. Please, research.
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+		<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+		<link rel="stylesheet"
+		      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/default.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<h1>GIT Code Search</h1> <br>			
+		{% if search_result.hits|length %}
+			{% for hit in search_result.hits %}
+			    	<div id="codecontainer">
+					<div class="title">
+						<div class="flex-auto">{{ hit._source.repository }} / {{ hit._source.fileName }}{{hit._source.extension}}</div>
+						<a id="raw-url" class="btn btn-grp">Raw</a>
+						<a id="follow-repo" class="btn btn-grp">GoToRepo</a>
+					</div>
+					<div class="warpcode">
+<pre><code>{{ hit._source.sourceCode }}</code></pre>
+					</div>
+				</div>
+		        	<br><br>
+			{% endfor %}
+		{% else %}
+			We can't find any code related to your search. Please, research.
 		{% endif %}
-	    </h3>
-	</center>
-    </body>
+	</body>
 </html>

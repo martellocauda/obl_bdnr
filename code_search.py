@@ -31,7 +31,7 @@ def index():
 def search():
     ##ver si viene ordenada por score, sino, ordenar
     search_result=make_es_search(request.form['to_search'])
-    return render_template('results.html', search_result=search_result)
+    return render_template('results.html', search_result=search_result, test="asd")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
