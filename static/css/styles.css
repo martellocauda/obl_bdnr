@@ -14,10 +14,9 @@ body{
     height: auto;
 }
 
-#back{background-color: #fafbfc;
-       overflow: hidden;
-
-
+#back{
+    background-color: #fafbfc;
+     overflow: hidden;
 }
 #bodycontainer {
     width: 100%;
@@ -32,9 +31,6 @@ body{
     height: 100%;
     vertical-align: middle; 
     margin-left: 15px;
-
-
-
 }
 
 .links img{
