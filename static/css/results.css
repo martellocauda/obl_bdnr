@@ -12,6 +12,13 @@
     margin: auto;
 }
 
+#nonefind {
+    margin-top: 20px;
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
 .title {
     font: 12px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     width: auto;
