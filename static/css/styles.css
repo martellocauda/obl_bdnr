@@ -45,7 +45,7 @@ body{
     width: 13px;
     height: 13px;
     margin-bottom: 3px;
-    margin-right: 2px;
+    margin-right: 7px;
 }
 
 #magni {
@@ -116,6 +116,18 @@ body{
     font-weight:  bold;
 }
 
+.feedactiontitle img {
+    display: block;
+    height: 58px;
+    margin-right: 10px;
+}
+
+#feedcontainer {
+    width: 500px;
+    height: 120px;
+    margin: auto;
+}
+
 .advancedsearchbutton {
     padding: 13px;
     width: 145px;
@@ -129,8 +141,59 @@ body{
     margin-top: 25px;
 }
 
+.simulatecontainer {
+   text-align: center;
+   margin-bottom: 25px;
+}
+
+.simulatefeedbutton {
+    padding: 13px;
+    width: 180px;
+    color: #0366d6;
+    background-color: white;
+    background-image: none;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+    font-weight:  bold;
+    margin: auto;
+    margin-top: 25px;
+}
+
+#pagcontainer {
+  text-align: center;
+}
+
+.pagination {
+  margin: auto;
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.activepag {
+  background-color: #4CAF50;
+  color: white;
+}
+
 #advsearchcontainer {
     text-align: center;
+}
+
+.feedactiontitle {
+    font: 12px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    width: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #f6f8fa;
+    padding: 8px 12px;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px;
 }
 
 .advancedsearchitem{
@@ -146,6 +209,11 @@ body{
 
 .nondisplay {
     display: none;
+}
+
+.simulatefeedbutton:hover {
+    background-color: #0366d6;
+    color: white;
 }
 
 .advancedsearchbutton:hover {

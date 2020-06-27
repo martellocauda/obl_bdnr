@@ -21,7 +21,7 @@
                         <img src="{{ url_for('static', filename='img/subheader.PNG') }}" id="votes">
                         <div id="bodycontainer">
                                 <div id="buttons">
-                                        <a href="#" id="feed_btn" class="links"><img src="{{ url_for('static', filename='img/feed.PNG') }}" id="img_feed"> Feed</a>
+                                        <a href="feed?pag=1" id="feed_btn" class="links"><img src="{{ url_for('static', filename='img/feed.PNG') }}" id="img_feed"> Feed</a>
                                         <a href="#" id="search_btn" class="links active"><img src="{{ url_for('static', filename='img/search.PNG') }}" id="magni"> Code search</a>
                                         <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/code.PNG') }}"> Code</a>
                                         <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/issues.PNG') }}"> Issues</a>
@@ -59,11 +59,6 @@
 		    <div id="nonefind">We can't find any code related to your search. Please, research.</div>
 		{% endif %}
 		</div>
-		<div id="feedscontainer" class="container_not_active">
-                        <div class="functionality_container">
-                                IM FEEEEEEDS
-                        </div>
-                </div>
                 <div id="notimplementedcontainer" class="container_not_active">
                         <div class="functionality_container">
                                 Not implemented yet.

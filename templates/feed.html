@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+		<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+		<link rel="stylesheet"
+		      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/default.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.svg') }}"/>
+		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css"/>
+		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+                <script src="{{ url_for('static', filename='js/header.js') }}"></script>
+		<title>GitHub</title>
+	</head>
+	<body>
+		<header>
+                	<img src="{{ url_for('static', filename='img/header.PNG') }}" id="menu">
+	        </header>
+                <div id="back">
+                        <img src="{{ url_for('static', filename='img/subheader.PNG') }}" id="votes">
+                        <div id="bodycontainer">
+                                <div id="buttons">
+                                        <a href="feed?pag=1" id="feed_btn" class="links active"><img src="{{ url_for('static', filename='img/feed.PNG') }}" id="img_feed"> Feed</a>
+                                        <a href="#" id="search_btn" class="links"><img src="{{ url_for('static', filename='img/search.PNG') }}" id="magni"> Code search</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/code.PNG') }}"> Code</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/issues.PNG') }}"> Issues</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/pull.PNG') }}"> Pull requests</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/action.PNG') }}"> Action</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/project.PNG') }}"> Projects</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/wiki.PNG') }}"> Wiki</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/security.PNG') }}"> Security</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/insight.PNG') }}"> Insights</a>
+                                        <a href="#" class="links notimplemented_btn"><img src="{{ url_for('static', filename='img/settings.PNG') }}"> Settings</a>
+                                </div>
+                        </div>
+                </div>	
+                <div id="searchcontainer" class="container_not_active">
+                        <div class="functionality_container">
+                                <form method="POST" action="http://localhost:5000/codesearch">
+                                        <input type="text" placeholder="Enter data to search" name="data_to_search" class="search" required>
+                                        <input type="submit" value="Search" class="searchbutton">
+                                        <div id="advsearchcontainer"><input type="button" value="Advanced search " class="advancedsearchbutton"></div>
+                                        <br>
+                                        <div class="advancedsearchtext nondisplay">Licence </div>
+                                        <select name="licence_to_search" id="licences" class="advancedsearchitem nondisplay">
+                                                <option value="*">any</option>
+                                                {% for licence in licences %}
+                                                <option value="{{ licence.key }}">{{ licence.key }}</option>
+                                                {% endfor %}
+                                        </select>
+                                        <div class="advancedsearchtext nondisplay">Language </div>
+                                        <select name="language_to_search" id="languages" class="advancedsearchitem nondisplay">
+                                                <option value="*">any</option>
+                                                {% for language in languages %}
+                                                <option value="{{ language.key }}">{{ language.key }}</option>
+                                                {% endfor %}
+                                        </select>
+                                        <div class="advancedsearchtext nondisplay">Start creation date </div> <input type="date" id="startDate" class="advancedsearchitem nondisplay" name="startDate_to_search">
+                                        <div class="advancedsearchtext nondisplay">End creation date </div> <input type="date" id="endDate" class="advancedsearchitem nondisplay" name="endDate_to_search">
+                                        <input type="checkbox" name="hasadvancedsearch" id="hasadvancedsearch" style="display:none" value="yes">
+                                        <input type="hidden" name="hasadvancedsearch" id="hasadvancedsearchhidden" value="no">
+                                </form>
+                        </div>
+                </div>
+		<div id="feedscontainer" class="container_active">
+			<div class="simulatecontainer">
+				<form method="POST" action="http://localhost:5000/feed?pag=1">
+			    		<input type="submit" value="Simulate feed_action" class="simulatefeedbutton">
+				</form>
+			</div>
+			{% if feed_of_logged_user|length %}
+                        {% for feed_action in feed_of_logged_user %}
+			{% if feed_action.page == activepage %}
+                        <div id="feedcontainer">
+                                <div class="feedactiontitle">
+                                <img src="{{ url_for('static', filename='img/perfil1_64x64.PNG') }}">
+				<div class="flex-auto"><h4> {{ feed_action.login }} has done an {{ feed_action.message }} over REPOACÁ. Date: {{ feed_action.posted_formatted }}</h4></div>
+                                <a id="follow-repo" class="btn btn-grp">GoToRepo</a>
+                                </div>
+                        </div>
+                        <br><br>
+			{% endif %}
+                        {% endfor %}
+			<div id="pagcontainer">
+                        <div class="pagination">
+                                <a href="#">&laquo;</a>
+				{% for page in pages %}
+				{% if page == activepage %}
+				<a class="activepag" href="feed?pag={{ page }}">{{ page }}</a>
+				{% else %}
+				<a href="feed?pag={{ page }}">{{ page }}</a>
+				{% endif %}
+				{% endfor %}
+                                <a href="#">&raquo;</a>
+                        </div>
+			</div>
+			{% else %}
+			<div id="nonefind">We can't find any new feed action for you. Please, follow more active people :-)</div>
+			{% endif %}
+                </div>
+		<div id="notimplementedcontainer" class="container_not_active">
+                        <div class="functionality_container">
+                                Not implemented yet.
+                        </div>
+                </div>
+	</body>
+</html>
