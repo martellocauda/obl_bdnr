@@ -45,7 +45,7 @@
 			{% for hit in search_result.hits %}
 			    	<div id="codecontainer">
 					<div class="title">
-						<div class="flex-auto">{{ hit._source.repository }} // {{ hit._source.fileName }}{{hit._source.extension}} // Language: {{hit._source.codeLenguage}} // {{hit._source.creationDate}}</div>
+						<div class="flex-auto">{{ hit._source.repository }} // {{ hit._source.fileName }}{{hit._source.extension}} // Language: {{hit._source.codeLanguage}} // {{hit._source.creationDate}}</div>
 						<a id="raw-url" class="btn btn-grp">Raw</a>
 						<a id="follow-repo" class="btn btn-grp">GoToRepo</a>
 					</div>
