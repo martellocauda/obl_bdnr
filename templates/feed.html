@@ -11,6 +11,7 @@
 		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css"/>
 		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
                 <script src="{{ url_for('static', filename='js/header.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 		<title>GitHub</title>
 	</head>
 	<body>
@@ -75,7 +76,7 @@
                         <div id="feedcontainer">
                                 <div class="feedactiontitle">
                                 <img src="{{ url_for('static', filename='img/perfil1_64x64.PNG') }}">
-				<div class="flex-auto"><h4> {{ feed_action.login }} has done an {{ feed_action.message }} over REPOACÁ. Date: {{ feed_action.posted_formatted }}</h4></div>
+				<div class="flex-auto"><h4> {{ feed_action.login }} has done a {{ feed_action.message }} over {{ feed_action.repository }}. Date: {{ feed_action.posted_formatted }}</h4></div>
                                 <a id="follow-repo" class="btn btn-grp">GoToRepo</a>
                                 </div>
                         </div>
@@ -96,7 +97,7 @@
                         </div>
 			</div>
 			{% else %}
-			<div id="nonefind">We can't find any new feed action for you. Please, follow more active people :-)</div>
+			<div id="nonefind">We can't find any new feed action for you. Please, follow more active repos :-)</div>
 			{% endif %}
                 </div>
 		<div id="notimplementedcontainer" class="container_not_active">
