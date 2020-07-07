@@ -8,7 +8,7 @@ Tener instalado python3.6 y pip3 <br />
 ## Pasos
 Crear un nuevo virtualenv: python3 -m venv github <br />
 Imaginemos que la ruta del nuevo venv se crea en /srv/github/ <br />
-Clonar repo <br />
+Clonar repo: git clone https://github.com/martellocauda/obl_bdnr.git <br />
 Imaginemos que la ruta del repo es /srv/obl_bdnr/ <br />
 Activar venv: source /srv/github/bin/activate <br />
 Chequear bin de python: which python <br />
